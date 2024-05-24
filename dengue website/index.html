@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dengue Awareness</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: white;
+        }
+        header, footer {
+            position: fixed;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 50px;
+            height: 100px; /* Matching the height of the footer */
+        }
+        header {
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.8); /* Milky color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .translate-button {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: #f1f1f1;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        footer {
+            bottom: 0;
+            background-color: #f1f1f1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: black;
+            justify-content: space-between;
+            padding: 0 50px;
+        }
+        .content {
+            padding: 20px;
+            padding-top: 120px; /* To avoid overlap with fixed header */
+            padding-bottom: 120px; /* To avoid overlap with fixed footer */
+        }
+        .title-section {
+            background-image: url('https://img.jakpost.net/c/2024/01/05/2024_01_05_146093_1704464012._large.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 60px 20px;
+            position: relative;
+        }
+        .title-section h1 {
+            margin: 0;
+            font-size: 36px;
+            text-transform: uppercase;
+            text-align: left;
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+            display: inline-block;
+            padding: 10px;
+        }
+        .content-section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent background */
+            border-radius: 10px;
+            color: white; /* Ensure text is white */
+        }
+        .statistics-section {
+            background-image: url('https://www.isixsigma.com/wp-content/uploads/2018/11/shutterstock_1912291459-scaled.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 60px 20px;
+            color: white; /* Ensure text is white */
+            position: relative;
+        }
+        .statistics-section h2,
+        .statistics-section .highlight {
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+            display: inline-block;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .statistics-section .subtitle {
+            margin: 20px 0 10px;
+            font-size: 24px;
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+            display: inline-block;
+            padding: 10px;
+        }
+        .qdenga-section {
+            background-image: url('https://news.harvard.edu/wp-content/uploads/2021/02/iStock-12168123691.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 60px 20px;
+            color: white; /* Ensure text is white */
+        }
+        .footer-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+            color: black; /* Ensure text is black */
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        .footer-links img {
+            height: 50px;
+            cursor: pointer;
+        }
+        .content-section.black-text {
+            color: black;
+        }
+        .protection-section {
+            background-image: url('https://www.pantai.com.my/images/pantaihospitalmalaysialibraries/specialties/o-g-fertility/everything-you-need-to-know-about-hpv-vaccination-in-malaysia.jpg?sfvrsn=25848690_7');
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 60px 20px;
+            display: flex;
+            align-items: center;
+            color: white; /* Ensure text is white */
+        }
+        .protection-section img {
+            width: 200px; /* Larger size */
+            height: auto; /* Maintain aspect ratio */
+            margin-right: 20px;
+        }
+        .protection-section ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 18px;
+            color: black; /* Change font color to black */
+        }
+        .protection-section ul li {
+            margin: 10px 0;
+            position: relative;
+            padding-left: 30px;
+        }
+        .protection-section ul li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: black; /* Black tick */
+        }
+        .statistics-section .table-chart {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+            border-radius: 10px;
+            color: black;
+            padding: 20px;
+        }
+        .statistics-section .table-chart table {
+            width: 100%;
+        }
+        .statistics-section .table-chart img {
+            width: 100%;
+            max-width: 800px; /* Limit the width of the chart */
+            height: auto;
+            display: block;
+            margin: 0 auto; /* Center the chart */
+        }
+    </style>
+    <script>
+        function translatePage() {
+            // This is a placeholder for the translation logic
+            document.body.innerHTML = document.body.innerHTML.replace(/Dengue/g, '登革热')
+                                                              .replace(/Malaysia/g, '马来西亚')
+                                                              .replace(/cases/g, '病例')
+                                                              .replace(/deaths/g, '死亡')
+                                                              .replace(/reported/g, '报告')
+                                                              .replace(/In /g, '在 ')
+                                                              .replace(/significant/g, '显著')
+                                                              .replace(/high incidence/g, '高发病率')
+                                                              .replace(/prevalence/g, '流行')
+                                                              .replace(/virus/g, '病毒')
+                                                              .replace(/endemic/g, '地方病')
+                                                              .replace(/recurring outbreaks/g, '反复爆发')
+                                                              .replace(/health challenges/g, '健康挑战')
+                                                              .replace(/morbidity/g, '发病率')
+                                                              .replace(/mortality rates/g, '死亡率')
+                                                              .replace(/vulnerable populations/g, '弱势群体')
+                                                              .replace(/children/g, '儿童')
+                                                              .replace(/the elderly/g, '老年人')
+                                                              .replace(/underlying health conditions/g, '基础健康状况')
+                                                              .replace(/Severe dengue/g, '严重登革热')
+                                                              .replace(/Dengue Hemorrhagic Fever/g, '登革出血热')
+                                                              .replace(/Dengue Shock Syndrome/g, '登革休克综合征')
+                                                              .replace(/fatal/g, '致命')
+                                                              .replace(/promptly treated/g, '及时治疗')
+                                                              .replace(/plasma leakage/g, '血浆渗漏')
+                                                              .replace(/severe bleeding/g, '严重出血')
+                                                              .replace(/organ impairment/g, '器官损伤')
+                                                              .replace(/economic burden/g, '经济负担')
+                                                              .replace(/substantial healthcare costs/g, '大量的医疗费用')
+                                                              .replace(/hospitalization/g, '住院')
+                                                              .replace(/treatment/g, '治疗')
+                                                              .replace(/supportive care/g, '支持性护理')
+                                                              .replace(/loss of productivity/g, '生产力损失')
+                                                              .replace(/climate/g, '气候')
+                                                              .replace(/environment/g, '环境')
+                                                              .replace(/exacerbate/g, '加剧')
+                                                              .replace(/threat/g, '威胁')
+                                                              .replace(/widespread/g, '广泛')
+                                                              .replace(/urbanization/g, '城市化')
+                                                              .replace(/population growth/g, '人口增长')
+                                                              .replace(/mosquito breeding/g, '蚊子繁殖')
+                                                              .replace(/Dengue Statistics in Malaysia/g, '马来西亚登革热统计数据')
+                                                              .replace(/Dengue Cases and Trends/g, '登革热病例和趋势')
+                                                              .replace(/Age and Gender Distribution/g, '年龄和性别分布')
+                                                              .replace(/Seasonal Variation/g, '季节变化')
+                                                              .replace(/Introduction to Qdenga Vaccine/g, '介绍 Qdenga 疫苗')
+                                                              .replace(/MOH Policies/g, '卫生部政策')
+                                                              .replace(/Efficacy/g, '功效')
+                                                              .replace(/Indications and Criteria/g, '适应症和标准')
+                                                              .replace(/Vaccination Schedule/g, '疫苗接种计划')
+                                                              .replace(/First Dose: Initial vaccination/g, '第一剂：初次接种')
+                                                              .replace(/Second Dose: 3 months after the first dose/g, '第二剂：初次接种后 3 个月')
+                                                              .replace(/PROTECTION AGAINST DENGUE/g, '防止登革热')
+                                                              .replace(/PREVENTION OF HOSPITALIZATION/g, '预防住院')
+                                                              .replace(/LONG TERM PROTECTION AGAINST VIROLOGICALLY CONFIRMED DENGUE/g, '长期防护病毒学确认的登革热')
+                                                              .replace(/LONG TERM PROTECTION AGAINST HOSPITALIZATION/g, '长期防护住院')
+                                                              .replace(/EFFICACY SHOWN FOR DENV-1, DENV-2 AND DENV-3 BUT NOT FOR DENV-4/g, 'DENV-1、DENV-2 和 DENV-3 显示功效，但 DENV-4 没有')
+                                                              .replace(/GENERALLY WELL-TOLERATED VACCINE/g, '普遍耐受性良好的疫苗')
+                                                              .replace(/BOOKING FOR DENGUE VACCINATION NOW! SELECTING YOUR NEARBY AREA:/g, '立即预订登革热疫苗！选择您附近的地区：')
+                                                              .replace(/CHERAS/g, '蕉赖')
+                                                              .replace(/KEPONG/g, '甲洞');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="https://i.imgur.com/2flhH6o.jpeg" alt="New Logo" style="height: 80px;">
+    </header>
+    <div class="content">
+        <div class="title-section">
+            <h1>THREATENING FROM DENGUE</h1>
+            <div class="content-section">
+                <p>Dengue is a significant concern in Malaysia due to its high incidence and prevalence, with the virus being endemic in the country and recurring outbreaks causing substantial health challenges. The disease leads to severe health impacts, including high morbidity and mortality rates, especially among vulnerable populations like children, the elderly, and those with underlying health conditions. Severe dengue, known as Dengue Hemorrhagic Fever or Dengue Shock Syndrome, can be fatal if not promptly treated, resulting in complications such as plasma leakage, severe bleeding, and organ impairment.</p>
+                <p>The economic burden of dengue is considerable, with substantial healthcare costs for hospitalization, treatment, and supportive care, alongside the loss of productivity due to illness and hospitalization. Malaysia's climate and environment further exacerbate the dengue threat. The presence of Aedes aegypti and Aedes albopictus mosquitoes, the primary vectors for dengue, is widespread due to the warm and humid climate, which is ideal for mosquito breeding. Rapid urbanization and population growth increase human-mosquito interactions, especially in densely populated areas with inadequate water storage and waste management practices.</p>
+                <p>Dengue is also a global health concern, recognized by organizations such as the World Health Organization (WHO), and poses risks to international travelers, potentially spreading the virus beyond Malaysia's borders. Effective public health measures are crucial to address this threat, including vector control programs, public awareness campaigns, and enhanced surveillance and monitoring systems. Continuous efforts in these areas are essential to mitigate the impact of dengue and protect public health in Malaysia.</p>
+            </div>
+        </div>
+        <div class="statistics-section">
+            <h2>Dengue Statistics in Malaysia</h2>
+            <div class="subtitle"><strong>Dengue Cases and Trends</strong></div>
+            <p>In 2023, Malaysia reported a significant number of dengue cases, reaching over 130,000 cases with approximately 200 deaths. The trend over the past decade shows fluctuating numbers with peak years coinciding with high rainfall and ideal breeding conditions for mosquitoes. Urban areas such as Kuala Lumpur, Selangor, and Penang report the highest number of cases due to higher population density and environmental conditions conducive to mosquito breeding.</p>
+            <div class="subtitle"><strong>Age and Gender Distribution</strong></div>
+            <p>Dengue affects all age groups, but the highest incidence rates are found in children aged 5-14 years. Males are slightly more affected than females, with a ratio of approximately 1.2:1.</p>
+            <div class="subtitle"><strong>Seasonal Variation</strong></div>
+            <p>Dengue cases typically surge during the rainy season from May to September. The increased rainfall creates more breeding sites for Aedes mosquitoes, leading to higher transmission rates.</p>
+            <div class="table-chart">
+                <h3>Dengue Cases Table</h3>
+                <table border="1">
+                    <tr>
+                        <th>Year</th>
+                        <th>Cases</th>
+                        <th>Deaths</th>
+                    </tr>
+                    <tr>
+                        <td>2021</td>
+                        <td>75,000</td>
+                        <td>150</td>
+                    </tr>
+                    <tr>
+                        <td>2022</td>
+                        <td>90,000</td>
+                        <td>170</td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td>130,000</td>
+                        <td>200</td>
+                    </tr>
+                </table>
+                <h3>Dengue Cases Chart</h3>
+                <img src="https://adultimmunisation.msidc.my/wp-content/uploads/2023/09/statistik-kkm-2023_Page_04-e1697072472627-1536x1003.jpg" alt="Dengue Cases Chart">
+            </div>
+        </div>
+        <div class="qdenga-section">
+            <h2>Introduction to Qdenga Vaccine</h2>
+            <p><strong>MOH Policies</strong></p>
+            <p>The Ministry of Health (MOH) Malaysia has approved the use of the Qdenga dengue vaccine as part of the national immunization program. Policies include vaccination campaigns in high-risk areas and targeted immunization for vulnerable populations.</p>
+            <p><strong>Efficacy</strong></p>
+            <p>Clinical trials have shown that the Qdenga vaccine is approximately 80% effective in preventing symptomatic dengue infections. The vaccine also significantly reduces the severity of the disease in those who contract dengue post-vaccination.</p>
+            <p><strong>Indications and Criteria</strong></p>
+            <p>The Qdenga vaccine is recommended for individuals aged 9-45 years living in dengue-endemic areas. It is particularly indicated for those with a history of previous dengue infection, as it provides enhanced immunity.</p>
+            <div class="content-section">
+                <h3 style="color: white;">Vaccination Schedule</h3>
+                <p style="color: white;">First Dose: Initial vaccination</p>
+                <p style="color: white;">Second Dose: 3 months after the first dose</p>
+            </div>
+        </div>
+        <div class="protection-section">
+            <img src="https://i.imgur.com/OmPF3Bo.jpeg" alt="Qdenga Vaccine">
+            <ul>
+                <li>PROTECTION AGAINST DENGUE</li>
+                <li>PREVENTION OF HOSPITALIZATION</li>
+                <li>LONG TERM PROTECTION AGAINST VIROLOGICALLY CONFIRMED DENGUE</li>
+                <li>LONG TERM PROTECTION AGAINST HOSPITALIZATION</li>
+                <li>EFFICACY SHOWN FOR DENV-1, DENV-2 AND DENV-3 BUT NOT FOR DENV-4</li>
+                <li>GENERALLY WELL-TOLERATED VACCINE</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-text">
+            BOOKING FOR DENGUE VACCINATION NOW! SELECTING YOUR NEARBY AREA:
+        </div>
+        <div class="footer-links">
+            <div>
+                CHERAS
+                <a href="https://wa.me/601113372317">
+                    <img src="https://i.imgur.com/cNjdjIB.jpg" alt="Cheras WhatsApp Logo">
+                </a>
+            </div>
+            <div>
+                KEPONG
+                <a href="https://wa.me/601111479326">
+                    <img src="https://i.imgur.com/KfHX1PA.jpg" alt="Kepong WhatsApp Logo">
+                </a>
+            </div>
+        </div>
+        <button class="translate-button" onclick="translatePage()">中文</button>
+    </footer>
+</body>
+</html>
+
